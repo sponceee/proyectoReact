@@ -1,0 +1,23 @@
+.body{
+    background-image: url('../../img/portada.png');
+    height: 780px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+}
+
+.titulop{ 
+    box-sizing: border-box;
+    height: 100px;
+    width: fit-content;
+    margin-left: 25%;
+    padding-top: 300px;
+ 
+}
+
+.titulop h1{
+    font-size: 80px;
+    opacity: 70%;
+}
+
