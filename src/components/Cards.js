@@ -3,6 +3,7 @@ import Card from './Card';
 import usa from "../img/productos/usa.png";
 import mx from "../img/productos/mx.png";
 import pc from "../img/productos/puntacana.png";
+import App from "./TimeOut";
 
 
 const cards = [
@@ -49,5 +50,6 @@ function Cards() {
         </div>
     )
 }
+
 
 export default Cards;
