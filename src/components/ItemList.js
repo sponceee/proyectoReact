@@ -1,16 +1,17 @@
 import React from 'react';
-import Card from './Card';
+import Item from './Item';
 import usa from "../img/productos/usa.png";
 import mx from "../img/productos/mx.png";
 import pc from "../img/productos/puntacana.png";
-import App from "./TimeOut";
 
 
-const cards = [
+const items = [
     {
         id:1,
         title: 'Estados Unidos',
         image: usa,
+        descripcion: 'Viajá al país más visitado del mundo! ',
+        precio: '150',
 
     },
 
@@ -18,26 +19,30 @@ const cards = [
         id:2,
         title: 'Cancun',
         image: mx,
+        descripcion: 'Relajate en una de las playas más lindas y exoticas del mundo ;)',
+        precio: '120',
 
     },
 
     {
         id:3,
         title: 'Punta Cana',
-        image: pc,  
+        image: pc, 
+        descripcion: 'Necesitas relajarte? Sin dudas, el mejor lugar para lo que necesitas! ',
+        precio: '90', 
     }
 ]
 
-function Cards() {
+function ItemList() {
     
     return (
         <div className="container d-flex justify-content-center h-100 align-items-center">
             <div className="row">
                {
-                   cards.map(card => (
-                    <div className="col-md-4" key={card.id}>
+                   items.map(items => (
+                    <div className="col-md-4" key={items.id}>
             
-                    <Card title={card.title} imagenSrc={card.image}/>
+                    <Item title={items.title} imagenSrc={items.image} descripcion={items.descripcion} precio={items.precio}/>
                
                    </div>
 
@@ -52,4 +57,4 @@ function Cards() {
 }
 
 
-export default Cards;
+export default ItemList;

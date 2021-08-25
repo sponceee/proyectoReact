@@ -5,7 +5,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Card from './components/Card';
 import Productos from './components/Productos';
 import './global.css';
 

@@ -1,12 +1,14 @@
 import React from 'react'
-import Cards from '../components/Cards';
+import ItemListContainer from './ItemListContainer';
 import './styles/productos.css';
+
 
 
 const Productos = () => {
     return (
         <div>
-            <Cards/>
+             <ItemListContainer/>
+           
         </div>
     )
 }
