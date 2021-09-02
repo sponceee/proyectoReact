@@ -9,8 +9,12 @@ import items from './ItemList';
 
 
 function Item({title, imagenSrc, descripcion, precio}) {
+
+
+
     return (
         <div className="card text-center bg-dark">
+            
             <img src={imagenSrc} alt=""/>
             <div className="card-body text-light">
                 <Link to={`/items/${items.id}`}><h4 className="card-title ">{title}</h4></Link>

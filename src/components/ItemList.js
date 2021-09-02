@@ -16,6 +16,7 @@ import playacarmen from "../img/productos/playacarmen.png";
 
 
 
+
 export const items = [
     {
         id:1,
@@ -117,7 +118,10 @@ export const items = [
 
 function ItemList() {
     
+    
     return (
+
+        
         <div className="container d-flex justify-content-center h-100 align-items-center">
             <div className="row">
                {
