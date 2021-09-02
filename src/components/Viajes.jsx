@@ -4,7 +4,7 @@ import './styles/productos.css';
 
 
 
-const Productos = () => {
+const Viajes = () => {
     return (
         <div>
              <ItemListContainer/>
@@ -15,4 +15,4 @@ const Productos = () => {
 
 
 
-export default Productos;
+export default Viajes;

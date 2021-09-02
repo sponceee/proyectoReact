@@ -4,9 +4,11 @@ import {
   Switch,
   Route,
   Link
-} from "react-router-dom";
-import Productos from './components/Productos';
+} from 'react-router-dom';
+import Viajes from './components/Viajes';
 import './global.css';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import CartWidget from './components/CartWidget';
 
 
 
@@ -21,11 +23,11 @@ function App() {
       <Link to="/"  className="nav-link" >
       Home
       </Link>
-      <Link to="/productos"  className="nav-link" >
+      <Link to="/category/viajes"  className="nav-link" >
       Viajes
       </Link>
 
-      <Link to="/productos"  className="nav-link" >
+      <Link to="/category/carrito"  className="nav-link" >
       🛒
       </Link>
 
@@ -33,11 +35,17 @@ function App() {
     </div>
       <hr/>
       <Switch>
-      <Route path="/productos">
-      <Productos/>
+        <Route path="/category/carrito">
+          <CartWidget/>
+        </Route>
+      <Route path="/category/viajes">
+      <Viajes/>
       </Route> 
       <Route path="/">
         <Inicio/>
+      </Route>
+      <Route path="/item/:id">
+        <ItemDetailContainer></ItemDetailContainer>
       </Route>
       </Switch>
     </div>

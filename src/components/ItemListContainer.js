@@ -1,6 +1,7 @@
 import ItemList from "./ItemList";
 import Itemcount from './ItemCount';
-import './styles/ilc.css';
+import './styles/ilc.css'; 
+import ItemDetailContainer from "./ItemDetailContainer";
 
 
 function ItemListContainer() {
@@ -8,9 +9,9 @@ function ItemListContainer() {
     return(
 
         <div>
-            <h1 className="tilc">Conoce todos los viajes que tenemos apra ofrecerte acá!</h1>
+            <h1 className="tilc"> Conoce todos los viajes que tenemos para ofrecerte acá!</h1>
 
-            <ItemList/>
+            <ItemDetailContainer/>
 
 
         </div>
