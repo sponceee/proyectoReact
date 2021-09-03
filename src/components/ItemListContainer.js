@@ -1,5 +1,4 @@
-import ItemList from "./ItemList";
-import Itemcount from './ItemCount';
+
 import './styles/ilc.css'; 
 import ItemDetailContainer from "./ItemDetailContainer";
 

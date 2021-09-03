@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Item from './Item';
 import usa from "../img/productos/usa.png";
 import mx from "../img/productos/mx.png";
@@ -8,16 +8,17 @@ import bogota from "../img/productos/bogota.png";
 import brisbane from "../img/productos/brisbane.png";
 import costarica from "../img/productos/costarica.png";
 import frankfurt from "../img/productos/frankfurt.png";
-import lima from "../img/productos/lima.jpg";
 import miami from "../img/productos/miami.png";
 import riojaneiro from "../img/productos/riodejaneiro.png";
 import sgochile from "../img/productos/sgochile.png";
 import playacarmen from "../img/productos/playacarmen.png";
+import { useParams } from 'react-router-dom';
 
 
 
 
 export const items = [
+
     {
         id:1,
         title: 'Estados Unidos',
@@ -116,9 +117,13 @@ export const items = [
     },
 ]
 
+
+
 function ItemList() {
+
+
     
-    
+
     return (
 
         
@@ -126,9 +131,9 @@ function ItemList() {
             <div className="row">
                {
                    items.map(items => (
-                    <div className="col-md-4" key={items.id}>
-            
-                    <Item title={items.title} imagenSrc={items.image} descripcion={items.descripcion} precio={items.precio} />
+                    
+                    <div className="col-md-4">
+                    <Item title={items.title} imagenSrc={items.image} descripcion={items.descripcion} precio={items.precio}  id={items.id}/>
                
                    </div>
 

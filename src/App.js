@@ -7,8 +7,9 @@ import {
 } from 'react-router-dom';
 import Viajes from './components/Viajes';
 import './global.css';
-import ItemDetailContainer from './components/ItemDetailContainer';
+import Item from './components/Item';
 import CartWidget from './components/CartWidget';
+import {CartProv} from "./components/CartContext";
 
 
 
@@ -16,7 +17,7 @@ function App() {
   return (
 
 
-   
+   <CartProv>
     <Router>
     <div>
     <div className="navbar navbar-expand-lg navbar-light bg">
@@ -45,12 +46,13 @@ function App() {
         <Inicio/>
       </Route>
       <Route path="/item/:id">
-        <ItemDetailContainer></ItemDetailContainer>
+        <Item/>
       </Route>
       </Switch>
     </div>
 
     </Router>
+    </CartProv>
     
   );
 }

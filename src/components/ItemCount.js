@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState}from 'react';
 import { Button } from 'semantic-ui-react';
 import  './styles/count.css';
 
@@ -44,9 +44,9 @@ class Itemcount extends React.Component{
 export default Itemcount;*/}
 
 
-const Itemcount =()=>{
+const Itemcount =({onAdd, stock, initial = 1})=>{
 
-    const [personas,setPersonas]= React.useState(0);
+    const [personas,setPersonas]= React.useState(initial);
     const aumentarPersonas =()=>{
 
         setPersonas (personas + 1);
@@ -61,9 +61,10 @@ const Itemcount =()=>{
     return (
     <div className="boton0">
 
-     <p>Personas: {personas}</p>
+     <p>{personas}</p>
      <Button primary onClick={aumentarPersonas}>+</Button>
      <Button secondary onClick={decrementarPersonas}>-</Button>
+     <Button onClick={()=> onAdd(personas)}>AGREGAR</Button>
     </div>
     
     );
