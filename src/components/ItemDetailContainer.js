@@ -1,7 +1,9 @@
-import ItemList from './ItemList'
+import ItemList from './ItemList';
+import items from './ItemList';
 
 
 function itemDetailContainer(){
+
     
 
     return(

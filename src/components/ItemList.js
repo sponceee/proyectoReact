@@ -117,12 +117,48 @@ export const items = [
     },
 ]
 
+const getItems =()=>{
+
+    return new Promise ((trajoDatosOk,error)=>{
+        setTimeout(()=>{
+            trajoDatosOk(items)
+        })
+    },2000)
+}
 
 
-function ItemList() {
+
+function ItemList  () {
+    const [datosItem, setdatosItem]=useState([]);
+    const params = useParams ()
+
+    useEffect(() => {
+        getItems()
+        .then((items) => {
+            setdatosItem(items)
+        })
+    }, [])
+
+    const[ResultadoItems,setResultadoItems] = useState ([])
+
+    const {id} = useParams()
+
+    useEffect(() => {
+        const llamadaAServidor = new Promise ((traerDatosok, error)=>{
+            setTimeout(()=>{
+                id ?
+                traerDatosok(items.find(e=>e.id === id))
+                :
+                traerDatosok(items)
+    }, 2000)
+})
+    llamadaAServidor.then((items)=>{
+        setResultadoItems(items)
+    })
+
+},[])
 
 
-    
 
     return (
 
@@ -133,7 +169,7 @@ function ItemList() {
                    items.map(items => (
                     
                     <div className="col-md-4">
-                    <Item title={items.title} imagenSrc={items.image} descripcion={items.descripcion} precio={items.precio}  id={items.id}/>
+                    <Item items ={datosItem} title={items.title} imagenSrc={items.image} descripcion={items.descripcion} precio={items.precio}  id={items.id}/>
                
                    </div>
 
@@ -144,7 +180,7 @@ function ItemList() {
             </div>
             
         </div>
-    )
+    );
 }
 
 

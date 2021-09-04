@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react';
 import  './styles/count.css';
 
 
-{/*
+/*
 class Itemcount extends React.Component{
 
     constructor(){
@@ -41,7 +41,7 @@ class Itemcount extends React.Component{
  
 }
 
-export default Itemcount;*/}
+export default Itemcount;*/
 
 
 const Itemcount =({onAdd, stock, initial = 1})=>{
@@ -58,13 +58,17 @@ const Itemcount =({onAdd, stock, initial = 1})=>{
         setPersonas (personas - 1);
     };
 
+    const agregar = ()=>{
+        onAdd (personas)
+    }
+
     return (
     <div className="boton0">
 
      <p>{personas}</p>
-     <Button primary onClick={aumentarPersonas}>+</Button>
-     <Button secondary onClick={decrementarPersonas}>-</Button>
-     <Button onClick={()=> onAdd(personas)}>AGREGAR</Button>
+     <Button primary onClick={aumentarPersonas} disbled={personas >= stock}>+</Button>
+     <Button secondary onClick={decrementarPersonas} disabled={personas <= 1}>-</Button>
+     <Button onClick={agregar}>AGREGAR</Button>
     </div>
     
     );
