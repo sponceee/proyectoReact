@@ -46,7 +46,7 @@ export default Itemcount;*/
 
 const Itemcount =({onAdd, stock, initial = 1})=>{
 
-    const [personas,setPersonas]= React.useState(initial);
+    const [personas,setPersonas]= useState(initial);
     const aumentarPersonas =()=>{
 
         setPersonas (personas + 1);
@@ -58,7 +58,7 @@ const Itemcount =({onAdd, stock, initial = 1})=>{
         setPersonas (personas - 1);
     };
 
-    const agregar = ()=>{
+    const agregarPersonas = ()=>{
         onAdd (personas)
     }
 
@@ -68,7 +68,7 @@ const Itemcount =({onAdd, stock, initial = 1})=>{
      <p>{personas}</p>
      <Button primary onClick={aumentarPersonas} disbled={personas >= stock}>+</Button>
      <Button secondary onClick={decrementarPersonas} disabled={personas <= 1}>-</Button>
-     <Button onClick={agregar}>AGREGAR</Button>
+     <Button onClick={agregarPersonas}>AGREGAR</Button>
     </div>
     
     );
