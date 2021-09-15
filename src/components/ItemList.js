@@ -13,11 +13,21 @@ import riojaneiro from "../img/productos/riodejaneiro.png";
 import sgochile from "../img/productos/sgochile.png";
 import playacarmen from "../img/productos/playacarmen.png";
 import { useParams } from 'react-router-dom';
+import  {
+    getFirestore,
+    collection,
+    query,
+    where,
+    getDocs,
+} from 'firebase/firestore';
+import { db} from '../firebase';
 
 
 
 
-export const items = [
+
+
+{/*export const items = [
 
     {
         id:1,
@@ -124,11 +134,43 @@ const getItems =()=>{
             trajoDatosOk(items)
         })
     },2000)
-}
+}*/}
+
+export const Items = () =>{
+
+
+    const [items, setItems]=useState ([]);
+
+    console.log(items);
+
+    const getItems= async ()=>{
+        const docs =[];
+        const q = query(collection (db, 'viajes'));
+
+        const querySnapshot = await getDocs (q);
+        querySnapshot.forEach((doc)=>{
+            
+            docs.push({...doc.data(), id:doc.id});
+            
+        {/* console.log(doc.id,'=>', doc.data());*/}
+
+
+        });
+
+        setItems(docs);
+
+
+    };
+
+
+    useEffect(() => {
+        getItems();
+
+    },[]);
 
 
 
-function ItemList  () {
+    function ItemList  () {
     const [datosItem, setdatosItem]=useState([]);
     const params = useParams ()
 
@@ -182,6 +224,10 @@ function ItemList  () {
         </div>
     );
 }
+
+}
+
+
 
 
 export default ItemList;

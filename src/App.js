@@ -17,7 +17,6 @@ function App() {
   return (
 
 
-   <CartProv>
     <Router>
     <div>
     <div className="navbar navbar-expand-lg navbar-light bg">
@@ -52,7 +51,7 @@ function App() {
     </div>
 
     </Router>
-    </CartProv>
+   
     
   );
 }

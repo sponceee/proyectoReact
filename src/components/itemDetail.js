@@ -1,5 +1,4 @@
-
-import  Item  from './Item';
+{/*import  Item  from './Item';
 
 
 
@@ -10,4 +9,4 @@ function ItemDetail(){
     </div>
 }
 
-export default ItemDetail
+export default ItemDetail*/}

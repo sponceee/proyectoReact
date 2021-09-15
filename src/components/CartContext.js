@@ -1,4 +1,4 @@
-import React,{useContext, createContext, useState} from "react";
+{/*import React,{useContext, createContext, useState} from "react";
 import { items } from "./ItemList";
 
 export const CartContext = createContext();
@@ -26,7 +26,7 @@ export const CartProv = ({ children}) =>{
     };
 
     const removeItem =(itemId)=>{
-        setCarrito(carrito.filter((elem)=> elem.item.id !== itemId))
+        setCarrito(carrito.filter((items)=> items.id !== itemId))
     }
 
     const clear = () => setCarrito([]);
@@ -35,5 +35,5 @@ export const CartProv = ({ children}) =>{
 
     );
 
-}
+}*/}
     

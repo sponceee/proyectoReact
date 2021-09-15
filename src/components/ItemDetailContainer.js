@@ -1,5 +1,4 @@
 import ItemList from './ItemList';
-import items from './ItemList';
 
 
 function itemDetailContainer(){
